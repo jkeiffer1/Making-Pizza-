@@ -1,6 +1,8 @@
 
 def meats()
-	def pepperoni?
+	meats = do |pepperoni?,chicken?,bacon?steak?,ham?,anchovie?|
+		def pepperoni?
+	end
 		if 1 == [1,2].sample
 			puts "pepperoni"
 		end
