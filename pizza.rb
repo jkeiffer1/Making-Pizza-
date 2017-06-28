@@ -64,7 +64,7 @@ def meats()
 	meats << sausage
 
 	def anchovie()
-		if 1 == [1,2].sample
+		if 1 == [1,2,3].sample
 			puts "anchovie"
 		end
 	end
@@ -92,7 +92,7 @@ def veggies()
 	veggies << peppers
 
 	def tomato()
-		if 1 == [1,2].sample
+		if 1 == [1,2,3].sample
 			puts "tomato"
 		end
 	end
@@ -105,7 +105,7 @@ def veggies()
 	end
 	veggies << olives
 	def spinach()
-		if 1 == [1,2].sample
+		if 1 == [1,2,3].sample
 			puts "spinach"
 		end
 	end
@@ -120,12 +120,16 @@ def veggies()
 end
 
 
-#def special()
-#	extra meat
-#	extra cheese
-#	jush cheese
-#	extra veggies
-#	special()
+def special()
+	if 1 == [1,2,3].sample
+		puts "double meat"
+	end
+	if 1 == [1,2,3].sample
+		puts "double cheese"
+	end
+end
+
+special()
 #end
  
 #def sauces()
@@ -146,3 +150,4 @@ end
 puts crust
 meats
 veggies
+special
