@@ -1,7 +1,7 @@
 def pizza
-	puts size
-	puts crust
-	puts sauces
+	size
+	crust
+	sauces
 	meats
 	veggies
 	special
@@ -14,18 +14,22 @@ def size()
 		x == 0
 		x = "personal"
 		@size = 3
+		puts x
 	elsif
 		x == 1
 		x = "medium"
 		@size = 5
+		puts x
 	elsif
 		x == 2
 		x = "large"
 		@size = 6
+		puts x
 	elsif
 		x == 3
 		x = "extra-large"
 		@size = 7
+		puts x
 	end
 end
 
@@ -36,14 +40,17 @@ def crust()
 		x == 0
 		x = "thin crust"
 		@crust = 0
+		puts x
 	elsif
 		x == 1
 		x = "thick crust"
 		@crust = 1
+		puts x
 	elsif
 		x == 2
 		x = "stuffed crust"
 		@crust = 2
+		puts x
 	end
 end
 
@@ -54,22 +61,27 @@ def sauces()
 		y == 0
 		y = "marinara"
 		@sauce = 0
+		puts y
 	elsif
 		y == 1
 		y = "ranch"
 		@sauce = 2
+		puts y
 	elsif
 		y == 2
 		y = "alfredo"
 		@sauce = 2
+		puts y
 	elsif
 		y == 3
 		y = "BBQ"
 		@sauce = 2
+		puts y
 	elsif 
 		y == 4
 		y = "philly"
 		@sauce = 2
+		puts y
 	end
 end
 
@@ -142,7 +154,7 @@ def meats()
 	meats << anchovie
 end
 	
-@toppings
+@toppings = 0
 
 def veggies()
 	veggies = []
@@ -219,18 +231,18 @@ def delivery
 	end
 end
 
-@tip
+@tip = 0
 
 def tip
-	@delivery_speed = rand(31)
+	@delivery_speed = 1 + rand(30)
 	if @delivery_speed < 10
 		@tip = 10
 	elsif
-		@delivery_speed == (11..30)
+		@delivery_speed = (11..30)
 		@tip = 5
-	elsif
-		@delivery_speed == (31..45)
-		@tp = 2
+	else
+		@delivery_speed >= 30
+		@tp = 0
 	end
 	puts "ETA: #{@delivery_speed}min"
 	puts "delivery charge: $#{@delivery} tip:$#{@tip}"
@@ -253,8 +265,21 @@ def order
 	@a = gets.chomp.to_i
 	(@a).times do
 		pizza
+		price
 		puts " "
 	end
+	order_total
+	delivery
+end
+
+
+def order_total
+	@sum = 0
+	@total.each do |i|
+		@sum += i
+	end
+	@sum + @delivery + @tip
+	puts "#{@a} Pizzas come to a total of $#{@sum.round(2)}"
 end
 
 order
